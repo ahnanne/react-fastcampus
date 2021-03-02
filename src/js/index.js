@@ -36,18 +36,21 @@
   global.setTimeout(function () {
     console.group('MODULE → 모듈 관리 상태');
     isValid
-      ? success('의존성 모듈 관리에 문제가 없어 앱이 정상 작동합니다.')
-      : error('의존성 모듈 관리에 문제가 있어 앱이 정상 작동하지 않습니다.');
+      ?
+      success('의존성 모듈 관리에 문제가 없어 앱이 정상 작동합니다.') :
+      error('의존성 모듈 관리에 문제가 있어 앱이 정상 작동하지 않습니다.');
   });
 
   /* -------------------------------------------------------------------------- */
   // 테스트
 
   test('createElement() 전달 속성', function () {
-    const vNode = createElement('h3', { className: 'heading-3' }, 'TDD');
+    const vNode = createElement('h3', {
+      className: 'heading-3'
+    }, 'TDD');
 
     expect(vNode.type).toBe('h3');
-    expect(vNode.props.children).toBe('tdd');
+    expect(vNode.props.children[0].toLowerCase()).toBe('tdd');
   });
 
   /* -------------------------------------------------------------------------- */
@@ -55,8 +58,7 @@
   // vNode 생성
 
   var moduleLink = createElement(
-    'a',
-    {
+    'a', {
       href: 'https://bit.ly/3brDMBS',
       rel: 'noopener noreferrer',
       target: '_blank',
@@ -73,25 +75,30 @@
   });
 
   var headline = createElement(
-    'h1',
-    { className: 'headline' },
+    'h1', {
+      className: 'headline'
+    },
     moduleLink,
     ' 관리',
     cube
   );
 
   var slogan = createElement(
-    'p',
-    { className: 'slogan' },
+    'p', {
+      className: 'slogan'
+    },
     '웹 브라우저 환경에서의 모듈 관리는 까다롭습니다.'
   );
 
   var container = createElement(
-    'div',
-    { className: 'container' },
+    'div', {
+      className: 'container'
+    },
     headline,
     slogan
   );
+
+
 
   /* -------------------------------------------------------------------------- */
   // 렌더링
