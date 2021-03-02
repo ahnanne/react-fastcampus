@@ -1,0 +1,64 @@
+:root {
+  --lightgray: #f5f5f5;
+  --darkgray: #303952;
+  --base-unit: 8;
+}
+
+::selection {
+  background: var(--darkgray);
+  color: var(--lightgray);
+}
+
+img::selection {
+  background: transparent;
+}
+
+body {
+  min-height: 90vh;
+  margin: 0;
+  background: var(--darkgray);  
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 130px;
+  left: 0;
+  right: 0;
+  height: 352px;
+  background: url("../assets/wave.svg") no-repeat center bottom;
+  background-size: 2200px;
+}
+
+#root {
+  height: 360px;
+  padding: calc(var(--base-unit) * 6px);
+  background: var(--lightgray);
+}
+
+.container {
+  color: #303952;
+  
+}
+
+.headline {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: calc(var(--base-unit) * 5);
+  text-rendering: optimizeLegibility;
+}
+
+.externalLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cube {
+  vertical-align: baseline;
+  margin-left: 2px;
+}
+
+.slogan {
+  margin-top: calc(var(--base-unit) * 1px);
+  text-rendering: auto;
+}
