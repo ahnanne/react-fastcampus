@@ -1,11 +1,7 @@
-import loggerFunc from './logger.js';
-import utilsFunc from './utils.js';
+import logger from './logger.js';
+import utils from './utils.js';
 
-const tester = () => {
-  // Euid 모듈 멤버 추출
-  const utils = utilsFunc();
-  const logger = loggerFunc();
-
+const tester = (() => {
   /* -------------------------------------------------------------------------- */
 
   // 테스트 유틸리티
@@ -46,6 +42,6 @@ const tester = () => {
     test,
     expect,
   };
-};
+})();
 
 export default tester;

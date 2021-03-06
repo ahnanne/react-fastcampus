@@ -1,6 +1,6 @@
 import logger from './logger.js';
 
-const utils = () => {
+const utils = (() => {
   /* -------------------------------------------------------------------------- */
   // 타입 검사 유틸리티
 
@@ -83,6 +83,6 @@ const utils = () => {
     deserialize,
     mixins,
   };
-};
+})();
 
 export default utils;

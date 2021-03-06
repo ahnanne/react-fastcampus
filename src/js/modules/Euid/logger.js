@@ -1,4 +1,4 @@
-const logger = () => {
+const logger = (() => {
   const MESSAGE_STYLES = {
     log: `
       color: #1c1c1d;
@@ -24,42 +24,33 @@ const logger = () => {
     `,
   };
 
-  /* -------------------------------------------------------------------------- */
-  // 메시지 유틸리티
-  // ✨Arrow Function과 템플릿 리터럴 이용하여 바꾸기(과제)
-
   const log = (message, messageStyle = MESSAGE_STYLES.log) => {
     console.log(`%c ${message} ${messageStyle}`);
   };
-  // default 파라미터 선언 방법 등장 이전
-  // ✨ES6 문법에 따라 바꾸기(과제)
 
-  const info = message => {
-    return log(`🔵 ${message} ${MESSAGE_STYLES.info}`);
-  };
+  const info = message => log(`🔵 ${message}`, MESSAGE_STYLES.info);
 
-  const success = message => {
-    return log(`🟢 ${message} ${MESSAGE_STYLES.success}`);
-  };
+  const success = message => log(`🟢 ${message}`, MESSAGE_STYLES.success);
 
-  const warn = message => {
-    return log(`🟠 ${message} ${MESSAGE_STYLES.warn}`);
-  };
+  const warn = message => log(`🟠 ${message}`, MESSAGE_STYLES.warn);
 
-  const error = message => {
-    return log(`🔴 ${message} ${MESSAGE_STYLES.error}`);
-  };
+  const error = message => log(`🔴 ${message}`, MESSAGE_STYLES.error);
 
   return {
-    MESSAGE_STYLES,
     log,
     info,
     success,
     warn,
     error,
   };
-};
+})();
 
+/* -------------------------------------------------------------------------- */
+// 메시지 유틸리티
+// ✨Arrow Function과 템플릿 리터럴 이용하여 바꾸기(과제)
+
+// default 파라미터 선언 방법 등장 이전
+// ✨ES6 문법에 따라 바꾸기(과제)
 /* -------------------------------------------------------------------------- */
 // 모듈 내보내기
 export default logger;
